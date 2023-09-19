@@ -1,16 +1,16 @@
-import express from "express";
+import express, { Express, Request, Response } from "express";
 import http from "http";
 import { Server } from "socket.io";
 
 //
-const app = express();
+const app: Express = express();
 const server = http.createServer(app);
 const port = 8000;
 
 // creating new socket.io server
 const io = new Server(server);
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.sendFile(process.cwd() + "/index.html");
 });
 
