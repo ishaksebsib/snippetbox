@@ -38,7 +38,7 @@ func main() {
 	mux.HandleFunc("GET /snippet/{id}", snippetView)
 	mux.HandleFunc("POST /snippet/create", snippetCreate)
 
-	log.Print("Starting server started on localhost:4000")
+	log.Print("Starting server on localhost:4000")
 	err := http.ListenAndServe(":4000", mux)
 	log.Fatal(err)
 
